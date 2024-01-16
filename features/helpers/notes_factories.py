@@ -1,0 +1,3 @@
+
+class RightNotesFactory:
+    get = list()
