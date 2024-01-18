@@ -1,5 +1,6 @@
 from studynotesreciever.reciever import StudyNoteReciever
 import pytest
+from entities.note import Note
 
 class StudyNote:
     pass
@@ -23,4 +24,14 @@ def test_sut_shouldnt_accept_list_with_nothing_but_string():
     with pytest.raises(ValueError):
         sut.recieve_notes(notes)
 
+
+
+
+#NOTE: Unitary test
+def test_sut_should_return_notes_list():
+    notes = ['nota 1','nota 2']
+    sut = StudyNoteReciever()
+    sut_response = sut.recieve_notes(notes)
+    assert len(sut_response) == 2
+    assert type(sut_response[0]) == Note
 

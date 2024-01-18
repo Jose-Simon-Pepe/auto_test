@@ -1,3 +1,5 @@
+from entities.note import Note
+
 class StudyNoteReciever:
     def __init__(self):
         self._recieved:list
@@ -10,3 +12,10 @@ class StudyNoteReciever:
             if type(note) is not str:
                 raise ValueError()
         self._recieved=notes
+        to_return = list()
+        for note in self._recieved:
+            to_return.append(Note())
+        return to_return
+
+
+
