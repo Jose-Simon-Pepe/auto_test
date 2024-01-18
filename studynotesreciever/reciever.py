@@ -14,7 +14,7 @@ class StudyNoteReciever:
         self._recieved=notes
         to_return = list()
         for note in self._recieved:
-            to_return.append(Note(content="stub"))
+            to_return.append(Note(content=note))
         return to_return
 
 

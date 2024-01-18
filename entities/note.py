@@ -8,6 +8,9 @@ class Note:
     def get_tags(self):
         return self._tags
 
+    def get_content(self):
+        return self._content
+
 
 class VoidContentNoteException(BaseException):
     pass

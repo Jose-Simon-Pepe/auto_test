@@ -35,3 +35,10 @@ def test_sut_should_return_notes_list():
     assert len(sut_response) == 2
     assert type(sut_response[0]) == Note
 
+
+def test_sut_should_return_notes_with_given():
+    notes = ['nota 1','nota 2']
+    sut = StudyNoteReciever()
+    sut_response = sut.recieve_notes(notes)
+    assert sut_response[0].get_content() == 'nota 1'
+
