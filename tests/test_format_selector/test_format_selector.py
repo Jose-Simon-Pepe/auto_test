@@ -1,7 +1,9 @@
-from noteintroducer.format_selector import FormatSelector
+from noteintroducer.format_selector import FormatSelector 
+from noteintroducer.protocols.supported_formats_storage import SUPPORTEDFORMATSSTORAGE
+
 """Format Selector Component"""
 
-class FormatStorageStub:
+class FormatStorageStub(SUPPORTEDFORMATSSTORAGE):
     def __init__(self):
         self.supported_formats = ['format1','format2']
     def get_all(self):
