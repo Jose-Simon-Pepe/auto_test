@@ -1,4 +1,4 @@
-from studynotesreciever.reciever import StudyNoteReciever,NoNoteDTORecieved
+from noteintroducer.reciever import StudyNoteReciever,NoNoteDTORecieved
 from dtos.recievenote import RecieveNoteDTO
 import pytest
 from entities.note import Note
