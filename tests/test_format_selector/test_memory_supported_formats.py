@@ -6,8 +6,6 @@ def test_sut_should_get_all_supported_formats_from_memory():
     sut = MemorySupportedFormat(storage=memory)
     assert sut.get_all(supported_formats)
 
-#TODO: Make get by name as protocol method 
-
 def test_sut_should_get_supported_formats_by_name():
     format1 = {
         "name":"format1",

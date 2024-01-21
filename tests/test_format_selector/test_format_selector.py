@@ -1,50 +1,17 @@
 from noteintroducer.format_selector import FormatSelector 
 from noteintroducer.protocols.supported_formats_storage import SUPPORTEDFORMATSSTORAGE
 from noteintroducer.agents.memory_supported_formats_storage import MemorySupportedFormat
+from tests.helpers.format_memory_factory import FormatMemoryFactory
 
 """Format Selector Component"""
-format1 = {
-    "name":"format1",
-    "title":"# ",
-    "topic" : "#",
-    "body":"*"
-}
-format2 = {
-    "name":"format2",
-    "title":"= ",
-    "topic" : "//=",
-    "body":"*"
-}
-supported_formats= [format1,format2]
 
-class FormatStorageStub(SUPPORTEDFORMATSSTORAGE):
-    def __init__(self):
-        self.format1 = {
-            "name":"format1",
-            "title":"# ",
-            "topic" : "#",
-            "body":"*"
-        }
-        self.format2 = {
-            "name":"format2",
-            "title":"= ",
-            "topic" : "//=",
-            "body":"*"
-        }
-        self.supported_formats = [self.format1,self.format2]
-    def get_all(self):
-        return self.supported_formats
+format_storage_stub = FormatMemoryFactory().memory_supported_format
 
-    def get_by_name(self,name:str) -> dict:
-        pass
-
-
-format_storage_stub = FormatStorageStub()
 
 
 def test_sut_should_get_all_supported_formats():
     sut = FormatSelector(format_storage=format_storage_stub)
-    assert sut.get_all_format() == supported_formats
+    assert sut.get_all_format() == format_storage_stub.get_all()
     
 
 def test_sut_should_load_all_supported_formats_up_on_start():
