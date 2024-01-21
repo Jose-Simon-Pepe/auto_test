@@ -3,8 +3,12 @@ from noteintroducer.note_reader import NoteReader
 from tests.helpers.format_selector_factory import FormatSelectorFactory
 from tests.helpers.format_memory_factory import FormatMemoryFactory
 from noteintroducer.agents.memory_supported_formats_storage import MemorySupportedFormat
-memory_supported_format = FormatMemoryFactory().memory_supported_format
-class NoteReaderConfigSpy:
+from noteintroducer.protocols.note_reader_config import NOTEREADERCONFIG
+
+
+memory_supported_format = FormatMemoryFactory().memory_supported_format 
+
+class NoteReaderConfigSpy(NOTEREADERCONFIG):
     def __init__(self):
         self._value = False
         self._format = None
