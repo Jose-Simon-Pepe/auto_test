@@ -6,6 +6,7 @@ from noteintroducer.agents.memory_supported_formats_storage import MemorySupport
 from noteintroducer.protocols.note_reader_config import NOTEREADERCONFIG
 from noteintroducer.agents.note_reader_config import NoteReaderConfig
 from tests.helpers.note_reader_config_spy_load import NoteReaderConfigSpy
+from os import path,remove
 
 
 memory_supported_format = FormatMemoryFactory().memory_supported_format 
@@ -25,3 +26,21 @@ def test_sut_should_read_expected_note_format():
     format_selector.select_expected_note_format(expected='format1')
     sut = NoteReader(config=note_reader_config)
     assert sut.get_config()['format_expected']['name']=='format1'
+
+#NOTE: Integration
+#NOTE: Create builder to agilise instantiation
+def test_sut_should_read_a_doc():
+    if path.isfile("example_note"):
+        remove("example_note")
+    note = open("example_note",'w')
+    note.write("content of note")
+    note.close()
+    note_reader_config =  NoteReaderConfig()
+    format_selector = FormatSelectorFactory(note_reader_config=note_reader_config).format_selector
+    format_selector.select_expected_note_format(expected='format1')
+    sut = NoteReader(config=note_reader_config)
+    assert sut.read_note(path="example_note")[0] == "content of note"
+
+
+
+
