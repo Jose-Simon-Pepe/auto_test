@@ -1,4 +1,5 @@
 from noteintroducer.format_selector import FormatSelector 
+from tests.helpers.note_reader_config_spy import NoteReaderConfigSpy
 from noteintroducer.protocols.supported_formats_storage import SUPPORTEDFORMATSSTORAGE
 from noteintroducer.agents.memory_supported_formats_storage import MemorySupportedFormat
 from tests.helpers.format_memory_factory import FormatMemoryFactory
@@ -19,21 +20,10 @@ def test_sut_should_load_all_supported_formats_up_on_start():
 
 #NOTE: Integration test
 def test_sut_should_get_all_formats_from_memory_storage():
-    supported_formats = ['format1','format2']
-    memory_storage = MemorySupportedFormat(storage=supported_formats)
+    memory_storage = FormatMemoryFactory().memory_supported_format
     sut = FormatSelector(format_storage=memory_storage)
-    assert sut.get_all_format() == supported_formats
+    assert sut.get_all_format() == FormatMemoryFactory().memory_supported_format.get_all()
 
-class NoteReaderConfigSpy:
-    def __init__(self):
-        self._expected = None
-
-    def expected_note_format(self):
-        return self._expected
-
-
-    def set_expected_note_format(self,format=None):
-        self._expected = format
 
 def test_sut_should_allow_user_to_select_attribute_format():
     note_reader_config = NoteReaderConfigSpy()
