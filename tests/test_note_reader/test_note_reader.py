@@ -18,7 +18,6 @@ def test_note_reader_should_load_config_at_start():
 
 
 #NOTE: Integration test
-#NOTE: Crear fichero de donde memory storage toma los tipos de formato admitidos
 #NOTE: Lanzar excepcion en caso que el lector se use antes de configurar
 def test_sut_should_read_expected_note_format():
     note_reader_config =  NoteReaderConfig()
