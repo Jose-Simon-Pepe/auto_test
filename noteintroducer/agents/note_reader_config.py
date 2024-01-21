@@ -1,4 +1,4 @@
-from noteintroducer.protocols.supported_formats_storage import NOTEREADERCONFIG
+from noteintroducer.protocols.note_reader_config import NOTEREADERCONFIG
 
 class NoteReaderConfig(NOTEREADERCONFIG):
     def __init__(self):
