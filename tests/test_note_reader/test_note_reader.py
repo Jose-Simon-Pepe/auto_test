@@ -1,4 +1,5 @@
 from noteintroducer.format_selector import FormatSelector
+from tests.helpers.format_selector_factory import FormatSelectorFactory
 from tests.helpers.format_memory_factory import FormatMemoryFactory
 from noteintroducer.agents.memory_supported_formats_storage import MemorySupportedFormat
 memory_supported_format = FormatMemoryFactory().memory_supported_format
@@ -26,6 +27,7 @@ def test_note_reader_should_load_config_at_start():
     sut = NoteReader(config=spy_note_config)
     assert spy_note_config._value
 
+
 #NOTE: Integration test
 #NOTE: Crear factory de format selector
 #NOTE: Crear fichero de donde memory storage toma los tipos de formato admitidos
@@ -33,8 +35,7 @@ def test_note_reader_should_load_config_at_start():
 def test_sut_should_read_expected_note_format():
     note_reader_config =  NoteReaderConfigSpy()
     format_storage = memory_supported_format
-    format_selector = FormatSelector(format_storage=format_storage,
-                                     note_reader_config=note_reader_config)
+    format_selector = FormatSelectorFactory(note_reader_config=note_reader_config).format_selector
     format_selector.select_expected_note_format(expected='format1')
     sut = NoteReader(config=note_reader_config)
     assert sut.get_config()['format_expected']['name']=='format1'
