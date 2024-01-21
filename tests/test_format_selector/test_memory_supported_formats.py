@@ -24,3 +24,8 @@ def test_sut_should_get_supported_formats_by_name():
     sut = MemorySupportedFormat(storage=memory)
     assert sut.get_by_name(name="format1") == supported_formats[0]
 
+#NOTE: Integration test
+def test_sut_should_get_a_default_values_set():
+    all =  MemorySupportedFormat().get_all()
+    assert all['format1']['title']=="# "
+
