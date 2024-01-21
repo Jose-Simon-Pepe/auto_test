@@ -7,3 +7,9 @@ class MemorySupportedFormat(SUPPORTEDFORMATSSTORAGE):
 
     def get_all(self,storage=None):
         return self._storage
+
+    def get_by_name(self,name=None):
+        for storage in self._storage:
+            if storage["name"]==name:
+                return storage
+
