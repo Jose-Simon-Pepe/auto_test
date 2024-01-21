@@ -29,7 +29,6 @@ def test_note_reader_should_load_config_at_start():
 #NOTE: Crear fichero de donde memory storage toma los tipos de formato admitidos
 #NOTE: Crear memory factory
 #NOTE: Lanzar excepcion en caso que el lector se use antes de configurar
-#NOTE: revisar y corregir protocolo de memory supported format
 def test_sut_should_read_expected_note_format():
     format1 = {
         "name":"format1",

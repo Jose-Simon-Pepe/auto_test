@@ -35,6 +35,9 @@ class FormatStorageStub(SUPPORTEDFORMATSSTORAGE):
     def get_all(self):
         return self.supported_formats
 
+    def get_by_name(self,name:str) -> dict:
+        pass
+
 
 format_storage_stub = FormatStorageStub()
 
