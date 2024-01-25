@@ -7,9 +7,19 @@ from noteintroducer.protocols.note_reader_config import NOTEREADERCONFIG
 from noteintroducer.agents.note_reader_config import NoteReaderConfig
 from tests.helpers.note_reader_config_spy_load import NoteReaderConfigSpy
 from os import path,remove
+import pytest
 
 
 memory_supported_format = FormatMemoryFactory().memory_supported_format 
+
+@pytest.fixture(name="get_note")
+def get_note():
+    if path.isfile("tests/example_note"):
+        remove("tests/example_note")
+    note = open("tests/example_note",'w')
+    note.write("content of note")
+    note.close()
+
 
 
 def test_note_reader_should_load_config_at_start():
@@ -29,18 +39,16 @@ def test_sut_should_read_expected_note_format():
 
 #NOTE: Integration
 #NOTE: Create builder to agilise instantiation
-def test_sut_should_read_a_doc():
-    if path.isfile("example_note"):
-        remove("example_note")
-    note = open("example_note",'w')
-    note.write("content of note")
-    note.close()
+def test_sut_should_read_a_doc(get_note):
     note_reader_config =  NoteReaderConfig()
     format_selector = FormatSelectorFactory(note_reader_config=note_reader_config).format_selector
     format_selector.select_expected_note_format(expected='format1')
     sut = NoteReader(config=note_reader_config)
-    assert sut.read_note(path="example_note")[0] == "content of note"
+    assert sut.read_note(path="tests/example_note")[0] == "content of note"
 
+
+def test_sut_should_raise_if_doc_doesnt_contains_title_in_given_format():
+    pass
 
 
 
