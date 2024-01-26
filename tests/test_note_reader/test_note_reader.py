@@ -7,6 +7,7 @@ from noteintroducer.protocols.note_reader_config import NOTEREADERCONFIG
 from noteintroducer.agents.note_reader_config import NoteReaderConfig
 from tests.helpers.note_reader_config_spy_load import NoteReaderConfigSpy
 from os import path,remove
+from tests.helpers.builders.note_reader_builder import NoteReaderBuilder
 import pytest
 
 
