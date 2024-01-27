@@ -32,8 +32,3 @@ def test_sut_should_allow_user_to_select_attribute_format():
     sut.select_expected_note_format(expected='format1')
     assert note_reader_config.expected_note_format()['name']=='format1'
 
-
-    
-
-#FAILED tests/test_format_selector/test_format_selector.
-#    py::test_sut_should_allow_user_to_select_attribute_format - AttributeError: 'list' object has no attribute 'items'

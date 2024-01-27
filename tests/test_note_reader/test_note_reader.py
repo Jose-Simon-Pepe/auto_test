@@ -10,6 +10,7 @@ from os import path,remove
 from tests.helpers.builders.note_reader_builder import NoteReaderBuilder
 import pytest
 
+#TODO: Create Note Reader builder to agilise instantiation
 
 memory_supported_format = FormatMemoryFactory().memory_supported_format 
 
@@ -30,7 +31,6 @@ def test_note_reader_should_load_config_at_start():
 
 
 #NOTE: Integration test
-#NOTE: Lanzar excepcion en caso que el lector se use antes de configurar
 def test_sut_should_read_expected_note_format():
     note_reader_config =  NoteReaderConfig()
     format_selector = FormatSelectorFactory(note_reader_config=note_reader_config).format_selector
@@ -39,7 +39,6 @@ def test_sut_should_read_expected_note_format():
     assert sut.get_config()['name']=='format1'
 
 #NOTE: Integration
-#NOTE: Create builder to agilise instantiation
 def test_sut_should_read_a_doc(get_note):
     note_reader_config =  NoteReaderConfig()
     format_selector = FormatSelectorFactory(note_reader_config=note_reader_config).format_selector
