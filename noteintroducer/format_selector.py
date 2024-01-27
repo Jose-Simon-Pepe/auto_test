@@ -11,9 +11,11 @@ class FormatSelector:
         self._supported_format = format_storage.get_all()
 
     def select_expected_note_format(self,expected:str=None):
-        form_to_use = {'format_expected':None}
-        for format in self._supported_format:
-            if format['name']==expected:
-                form_to_use['format_expected'] = format
+        form_to_use = dict()
+        for form_name,format in self._supported_format.items():
+            if form_name==expected:
+                form_to_use['name']=form_name
+                form_to_use['title']=format['title']
+                form_to_use['topic']=format['topic']
         self._note_reader_config.set_expected_note_format(format=form_to_use)
 

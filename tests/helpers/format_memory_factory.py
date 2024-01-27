@@ -13,5 +13,6 @@ class FormatMemoryFactory:
         "topic" : "//=",
         "body":"*"
     }
-    memory_supported_format = MemorySupportedFormat(storage=[format1,format2])
+    memory_supported_format = MemorySupportedFormat({'format1':format1,
+                                                     'format2':format2})
 
