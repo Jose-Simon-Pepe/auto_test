@@ -14,7 +14,7 @@ Here're some of the project's best features:
 
 <h2>🛠️ Installation Steps:</h2>
 
-<p>1. Get you into PyPI</p>
+<p>pip install autoquiz</p>
 
 <h2>🍰 Contribution Guidelines:</h2>
 
