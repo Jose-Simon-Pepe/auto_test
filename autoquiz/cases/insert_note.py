@@ -1,4 +1,4 @@
-from noteintroducer.format_selector import FormatSelector
+from autoquiz.noteintroducer.format_selector import FormatSelector
 
 def select_format(format:str=None,
                   format_storage=None,

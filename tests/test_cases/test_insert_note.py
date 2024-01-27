@@ -1,6 +1,6 @@
-from noteintroducer.agents.memory_supported_formats_storage import MemorySupportedFormat
-from noteintroducer.agents.note_reader_config import NoteReaderConfig 
-from cases.insert_note import select_format
+from autoquiz.noteintroducer.agents.memory_supported_formats_storage import MemorySupportedFormat
+from autoquiz.noteintroducer.agents.note_reader_config import NoteReaderConfig 
+from autoquiz.cases.insert_note import select_format
 
 #TODO: Format should exist! make an enum
 

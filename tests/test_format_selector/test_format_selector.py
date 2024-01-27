@@ -1,7 +1,7 @@
-from noteintroducer.format_selector import FormatSelector 
+from autoquiz.noteintroducer.format_selector import FormatSelector 
 from tests.helpers.note_reader_config_spy import NoteReaderConfigSpy
-from noteintroducer.protocols.supported_formats_storage import SUPPORTEDFORMATSSTORAGE
-from noteintroducer.agents.memory_supported_formats_storage import MemorySupportedFormat
+from autoquiz.noteintroducer.protocols.supported_formats_storage import SUPPORTEDFORMATSSTORAGE
+from autoquiz.noteintroducer.agents.memory_supported_formats_storage import MemorySupportedFormat
 from tests.helpers.format_memory_factory import FormatMemoryFactory
 
 """Format Selector Component"""

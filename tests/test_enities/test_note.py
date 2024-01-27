@@ -1,5 +1,5 @@
 import pytest
-from entities.note import *
+from autoquiz.entities.note import *
 
 
 def test_note_should_has_a_content_not_null():

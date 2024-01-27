@@ -1,4 +1,4 @@
-from noteintroducer.protocols.note_reader_config import NOTEREADERCONFIG
+from autoquiz.noteintroducer.protocols.note_reader_config import NOTEREADERCONFIG
 
 class FormatExpected:
     def __init__(self,name:str=None,

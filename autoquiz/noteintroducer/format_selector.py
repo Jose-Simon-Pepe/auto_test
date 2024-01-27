@@ -1,4 +1,4 @@
-from noteintroducer.agents.note_reader_config import FormatExpectedBuilder
+from autoquiz.noteintroducer.agents.note_reader_config import FormatExpectedBuilder
 
 class FormatSelector:
     def __init__(self,format_storage=None,

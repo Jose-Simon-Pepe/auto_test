@@ -1,4 +1,4 @@
-from dtos.recievenote import RecieveNoteDTO
+from autoquiz.dtos.recievenote import RecieveNoteDTO
 def test_dto_has_content_and_tags():
     sut = RecieveNoteDTO(content="content",
                          tags=['tag1','tag2'])

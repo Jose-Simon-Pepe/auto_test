@@ -1,5 +1,5 @@
-from noteintroducer.note_reader import NoteReader
-from noteintroducer.format_selector import FormatSelector
+from autoquiz.noteintroducer.note_reader import NoteReader
+from autoquiz.noteintroducer.format_selector import FormatSelector
 
 class NoteReaderBuilder:
     def __init__(self):

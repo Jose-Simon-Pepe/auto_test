@@ -1,4 +1,4 @@
-from noteintroducer.agents.memory_supported_formats_storage import MemorySupportedFormat
+from autoquiz.noteintroducer.agents.memory_supported_formats_storage import MemorySupportedFormat
 
 def test_sut_should_get_all_supported_formats_from_memory():
     supported_formats = ['format1','format2']

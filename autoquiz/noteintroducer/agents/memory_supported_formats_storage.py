@@ -1,11 +1,11 @@
-from noteintroducer.protocols.supported_formats_storage import SUPPORTEDFORMATSSTORAGE
+from autoquiz.noteintroducer.protocols.supported_formats_storage import SUPPORTEDFORMATSSTORAGE
 import tomllib
 
 class MemorySupportedFormat(SUPPORTEDFORMATSSTORAGE):
 
     def __init__(self,storage=None):
         if storage == None:
-            self._storage = self._get_default(path="noteintroducer/data/default_formats.toml")
+            self._storage = self._get_default(path="autoquiz/noteintroducer/data/default_formats.toml")
         else:
             self._storage = storage
 

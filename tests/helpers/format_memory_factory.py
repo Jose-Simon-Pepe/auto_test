@@ -1,4 +1,4 @@
-from noteintroducer.agents.memory_supported_formats_storage import MemorySupportedFormat
+from autoquiz.noteintroducer.agents.memory_supported_formats_storage import MemorySupportedFormat
 
 class FormatMemoryFactory:
     format1 = {
