@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "testyou"
+name = "autoquiz"
 version = "0.1.0"
 description = "Create test from study notes"
 authors = ["jose <jose.s.contacto@gmail.com>"]
