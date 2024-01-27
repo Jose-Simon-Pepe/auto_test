@@ -36,7 +36,7 @@ def test_sut_should_read_expected_note_format():
     format_selector = FormatSelectorFactory(note_reader_config=note_reader_config).format_selector
     format_selector.select_expected_note_format(expected='format1')
     sut = NoteReader(config=note_reader_config)
-    assert sut.get_config()['name']=='format1'
+    assert sut.get_config().get_name()=='format1'
 
 #NOTE: Integration
 def test_sut_should_read_a_doc(get_note):

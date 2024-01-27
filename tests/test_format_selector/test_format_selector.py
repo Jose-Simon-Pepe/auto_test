@@ -30,5 +30,5 @@ def test_sut_should_allow_user_to_select_attribute_format():
     sut = FormatSelector(format_storage=format_storage_stub,
                          note_reader_config=note_reader_config)
     sut.select_expected_note_format(expected='format1')
-    assert note_reader_config.expected_note_format()['name']=='format1'
+    assert note_reader_config.expected_note_format().get_name()=='format1'
 
