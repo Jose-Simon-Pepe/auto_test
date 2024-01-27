@@ -1,21 +1,12 @@
 from noteintroducer.agents.memory_supported_formats_storage import MemorySupportedFormat
 from noteintroducer.agents.note_reader_config import NoteReaderConfig 
-from noteintroducer.format_selector import FormatSelector
+from cases.insert_note import select_format
 
 #TODO: In select_expected_note_format se estaba usando 
 # un tipo de dato diferente para obtener los formatos, por
 # lo que ahora esta usando array. Probablemente serviria un dto
 #TODO: Format should exist! make an enum
 
-def select_format(format:str=None,
-                  format_storage=None,
-                  note_reader_config=None,
-                  format_selector = None):
-    if None in [format,format_storage,note_reader_config]:
-        raise ValueError()
-    form_sel = FormatSelector(format_storage=format_storage,
-                              note_reader_config=note_reader_config)
-    form_sel.select_expected_note_format(format)
     
 
 def test_insert_note_should_able_user_to_select_format():
