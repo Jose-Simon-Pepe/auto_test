@@ -12,6 +12,7 @@ click = "^8.1.7"
 [tool.poetry.group.dev.dependencies]
 pytest-watch = "^4.2.0"
 behave = "^1.2.6"
+pylint = "^3.0.3"
 
 [build-system]
 requires = ["poetry-core"]

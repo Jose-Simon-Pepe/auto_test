@@ -1,4 +1,6 @@
 class Note:
+    """Study Note entity"""
+
     def __init__(self,content:str=None,tags:list=None):
         if content is None or content.rstrip()=="":
             raise VoidContentNoteException()
@@ -11,6 +13,5 @@ class Note:
     def get_content(self):
         return self._content
 
-
 class VoidContentNoteException(BaseException):
-    pass
+    """Note is empty"""

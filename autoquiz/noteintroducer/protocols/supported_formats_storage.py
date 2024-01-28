@@ -1,10 +1,11 @@
 from abc import ABC,abstractmethod
 class SUPPORTEDFORMATSSTORAGE(ABC):
+    """Suported Formats Storage Protocol"""
+
     @abstractmethod
     def get_all(self,storage=None) -> list:
-        pass
+        """Get all autoquiz supported formats"""
 
-    @abstractmethod 
+    @abstractmethod
     def get_by_name(self,name:str=None) -> dict:
-        pass
-
+        """Get supported format by name"""

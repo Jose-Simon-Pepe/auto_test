@@ -1,13 +1,11 @@
 from abc import ABC,abstractmethod
 class NOTEREADERCONFIG(ABC):
+    """Note Reader Config Protocol"""
 
     @abstractmethod
     def load_config(self):
-        self._value =True
-        return self._format
+        """Load note reader config"""
 
     @abstractmethod
     def set_expected_note_format(self,format=None):
-        self._format = format
-
-
+        """Set expected study notes format"""
