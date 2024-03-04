@@ -38,11 +38,11 @@ This project is licensed under the DWYW-BDSM: Do whatever you want but don't sue
 
 ## General Repo Metadata
 
-Mantained: No <br>
+Mantained: Yes <br>
 Production Proved: Yes <br>
-Able to Production: Yes <br>
-Methodologies: Feature Branching <br>
-Frameworks: Bootstrap Css <br>
+Able to Production: No <br>
+Methodologies: Trunk Based Development , CI , BDD <br>
+Frameworks: No <br>
 
 ## Enlaces de interes:
 
